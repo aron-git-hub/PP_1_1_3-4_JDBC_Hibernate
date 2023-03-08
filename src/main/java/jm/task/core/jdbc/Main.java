@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
         UserService userService = new UserServiceImpl();
+
         userService.createUsersTable();
 
         userService.saveUser("John", "Cohen", (byte) 74);
