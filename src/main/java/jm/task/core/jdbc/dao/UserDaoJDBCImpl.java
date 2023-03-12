@@ -10,19 +10,19 @@ import java.util.List;
 public class UserDaoJDBCImpl implements UserDao {
 
     static Connection connection;
-    static private List<User> userList;
+    private static List<User> userList;
     //Queries fields
-    static private final String CREATE_TABLE = """
+    private static final String CREATE_TABLE = """
             CREATE TABLE IF NOT EXISTS user (
                 id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
                 name VARCHAR(30) NOT NULL,
                 lastname VARCHAR(40) NOT NULL,
                 age TINYINT NULL)""";
-    static private final String DROP_TABLE = "DROP TABLE IF EXISTS user";
-    static private final String SAVE_USER = "INSERT INTO user (name, lastname, age) VALUES(?, ?, ?)";
-    static private final String REMOVE_USER = "DELETE FROM user WHERE id = ?";
-    static private final String GET_ALL_USERS = "SELECT id, name, lastname, age FROM user";
-    static private final String CLEAN_TABLE = "TRUNCATE TABLE user";
+    private static final String DROP_TABLE = "DROP TABLE IF EXISTS user";
+    private static final String SAVE_USER = "INSERT INTO user (name, lastname, age) VALUES(?, ?, ?)";
+    private static final String REMOVE_USER = "DELETE FROM user WHERE id = ?";
+    private static final String GET_ALL_USERS = "SELECT id, name, lastname, age FROM user";
+    private static final String CLEAN_TABLE = "TRUNCATE TABLE user";
 
     public UserDaoJDBCImpl() {
     }
